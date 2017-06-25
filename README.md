@@ -1,19 +1,26 @@
 storm-twitter-word-count
 ========================
 
-Sample project based on https://github.com/abh1nav/dvto1 demonstrating real-time computation Storm framework (https://github.com/nathanmarz/storm).
+Contador de Palabras de Twitter Utilizando la Herramienta Apache Storm Basado en https://github.com/davidkiss/storm-twitter-word-count y utlizando las caracterísitcas de Streaming del mismo.
 
-See my blog post for mor details on this project: http://kaviddiss.com/2013/05/17/how-to-get-started-with-storm-framework-in-5-minutes/.
+Este es un repositorio que se utilizará para un proyecto de investigación de la Escuela Colombiana de Ingeniería Julio Garavito
 
-The code subscribes to Twitter's Sample feed, keeps stats on words occuring in tweets and logs top list with of words with most count in every 10 seconds.
+Se ha actualizado el proyecto para ser usado en apache storm 1.1.0, y se ha ampliado para ser usado no sólo en modo local si no también en modo cluster.
 
-This project contains a simple storm topology that connects to the sample stream of the Twitter Streaming API and keeps stats on words occuring in tweets and prints top list of words with highest count in every 10 seconds.
+Actualmente el repositorio contiene 2 ramas:
 
-To get started:
-* Clone this repo
-* Import as existing Maven project in Eclipse
-* Run Topology.java with your twitter credentials as VM args (see http://twitter4j.org/en/configuration.html#systempropertyconfiguration)
+-Master (Para Correr En Modo Local)
+-Cluster (Para Correr En Modo Cluster)
 
-You'll need to have valid Twitter OAuth credentials to get the sample working.
-For the exact steps on how to do that, visit https://dev.twitter.com/discussions/631.
-"# TwitterStorm1" 
+Rama Cluster:
+  Para Ejecutar Esta Aplicación Es Necesario:
+  1. Clonar el repositorio
+  2. Ir a la carpeta del repositorio y ejecutar el comando :
+    mvn clean package assembly:single
+  3. En el nodo nimbus ir a la carpeta de apache storm y ejecutar el comando 
+    bin/storm jar /home/ubuntu/experimentos/TwitterStorm1/target/storm-twitter-word-count-jar-with-dependencies.jar com.kaviddiss.storm.Topology storm-twitter-word-count
+    
+  Para cambiar la cantidad de trabajadores solamente es editar la línea
+  config.setNumWorkers(3); en Topology.java
+
+   
