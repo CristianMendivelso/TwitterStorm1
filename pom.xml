@@ -40,13 +40,25 @@
       <version>3.0.3</version>
     </dependency>
     <dependency>
-      <groupId>storm</groupId>
-      <artifactId>storm</artifactId>
-      <version>0.8.1</version>
-      <scope>provided</scope>
+                    <groupId>org.apache.storm</groupId>
+                    <artifactId>storm-core</artifactId>
+                    <version>1.1.0</version>
+                    <scope>provided</scope>
+                    <exclusions>
 
-      
-    </dependency>
+                        <exclusion> 
+                            <groupId>org.slf4j</groupId>
+                            <artifactId>slf4j-log4j12</artifactId>
+                        </exclusion>
+                        <exclusion> 
+                            <groupId>log4j</groupId>
+                            <artifactId>log4j</artifactId>
+                        </exclusion>
+                    </exclusions> 
+
+
+                </dependency>
+            
   </dependencies>
 
   <build>
