@@ -1,0 +1,1 @@
+mvn exec:java -Dexec.mainClass="com.kaviddiss.storm.Topology" -Dtwitter4j.oauth.consumerKey=IzKjmshLsyC5bvtSv23yay3Wq -Dtwitter4j.oauth.consumerSecret=tIz3YgDZzLTWJ5VH0iGKLR7Soy7liatidQ3JDLW4VtCvqj3CVa -Dtwitter4j.oauth.accessToken=222586771-VcAp67SB6O5CPln0A7h9oc4ElBowwIytJLLmyIpb -Dtwitter4j.oauth.accessTokenSecret=taqq6PRUT52rPDIkBy8kLAMDQtrfkOD43bWQ7YiUUqUB7
